@@ -4,11 +4,13 @@ decorator
 dnspython
 fastapi
 fastapi-cli
+fastparquet
 httpcore
 httptools
-jupyter
+Jupiter
 numpy
 pandas
+pyarrow
 scikit-learn
 scipy
 uvicorn
