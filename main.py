@@ -8,7 +8,7 @@ app = FastAPI()
 #################################### Endpoint 1: cantidad_filmaciones_mes ###########################################
 
 #Traemos los datos de peliculas por mes
-df_cant_pelis_x_mes = pd.read_parquet('cant_pelis_x_mes.parquet')
+df_cant_pelis_x_mes = pd.read_parquet('Datasets/cant_pelis_x_mes.parquet')
 
 def cantidad_filmaciones_mes(mes):
     # Diccionario para traducir los meses al español
@@ -38,7 +38,7 @@ def get_cantidad_filmaciones_mes(mes: str):
 #################################### Endpoint 2: cantidad_filmaciones_dia ##########################################
 
 #Traemos los datos de peliculas por dia
-df_cant_pelis_x_dia = pd.read_parquet('cant_pelis_x_dia.parquet')
+df_cant_pelis_x_dia = pd.read_parquet('Datasets/cant_pelis_x_dia.parquet')
 
 def cantidad_filmaciones_dia(dia):
 
@@ -68,7 +68,7 @@ def get_cantidad_filmaciones_dia(dia: str):
 #################################### Endpoint 3: score_titulo ##########################################
 
 #Traemos los datos ampliados de peliculas
-df_peliculas_datos = pd.read_parquet('peliculas_datos.parquet')
+df_peliculas_datos = pd.read_parquet('Datasets/peliculas_datos.parquet')
 
 def score_titulo(titulo):
     # Buscamos la fila donde el título coincide
@@ -125,7 +125,7 @@ def get_votos_titulo(titulo: str):
 #################################### Endpoint 5: get_actor ##########################################
 
 #Traemos los datos de actores
-df_actores = pd.read_parquet('actores.parquet')
+df_actores = pd.read_parquet('Datasets/actores.parquet')
 
 def consultar_actor(nombre_actor):
     # Filtramos el DataFrame de actores para obtener las películas en las que participó el actor
@@ -159,7 +159,7 @@ def get_actor(actor: str):
 #################################### Endpoint 6: get_director ##########################################
 
 #Traemos los datos de directores
-df_directores = pd.read_parquet('directores.parquet')
+df_directores = pd.read_parquet('Datasets/directores.parquet')
 
 def consultar_director(nombre_director):
     # Filtramos el DataFrame de directores para obtener las películas que dirigió el director
@@ -207,7 +207,7 @@ def get_director(director: str):
 #################################### Endpoint 7: Sistema de Recomendacion ##########################################
 
 #Traemos los datos de popularidad normalizada
-df_popularidad = pd.read_parquet('matriz_normalizada_popularity.parquet')
+df_popularidad = pd.read_parquet('Datasets/matriz_normalizada_popularity.parquet')
 
 matriz_similaridad_popularidad = cosine_similarity(df_popularidad)
 
