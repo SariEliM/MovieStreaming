@@ -1,8 +1,12 @@
 Proyecto Individual: Plataforma de Streaming de Películas
 
--Intro- Este proyecto fue realizado con el propósito de demostrar las capacidades adquiridas en cuanto a manejo de datasets, python, ETL y machine learning entre otros.
+-Intro- 
 
--Descripcion básica del Proyecto- A partir de dos datasets crudos de una plataforma de streaming de películas, movies y credits, se ha desarrollado una API en la web para consumo de estos datos, con 7 endpoints implementados, 6 de los cuales son funciones simples de consulta de datos agrupados y un endpoint principal que implementa un sistema de recomendación de películas desarrollado en base al modelo de similaridad del coseno.
+Este proyecto fue realizado con el propósito de demostrar las capacidades adquiridas en cuanto a manejo de datasets, python, ETL y machine learning entre otros.
+
+-Descripcion básica del Proyecto- 
+
+A partir de dos datasets crudos de una plataforma de streaming de películas, movies y credits, se ha desarrollado una API en la web para consumo de estos datos, con 7 endpoints implementados, 6 de los cuales son funciones simples de consulta de datos agrupados y un endpoint principal que implementa un sistema de recomendación de películas desarrollado en base al modelo de similaridad del coseno.
 
 -Descripción del proceso y archivos del proyecto-
 
