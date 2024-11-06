@@ -2,17 +2,17 @@ HENRY - PROYECTO INDIVIDUAL: Plataforma de Streaming de Películas
 
 -Intro- Este proyecto fue realizado con el propósito de demostrar las capacidades adquiridas en cuanto a manejo de datasets, python, ETL y machine learning entre otros.
 
--Descripcion básica del Proyecto- A partir de 2 datasets crudos de una plataforma de streaming de películas, movies y credits, se ha implementado una API en la web para consultas   5 de las 6 consultas requieren manejo básico de bases de datos y 1 requiere entrenar un modelo de machine learning para armar un sistema de recomendación de juegos.
+-Descripcion básica del Proyecto- A partir de dos datasets crudos de una plataforma de streaming de películas, movies y credits, se ha desarrollado una API en la web para consumo de estos datos, con 7 endpoints implementados, 6 de los cuales son funciones simples de consulta de datos agrupados y un endpoint principal que implementa un sistema de recomendación de películas desarrollado en base al modelo de similaridad del coseno.
 
--Pasos Dados para la concrecion del Proyecto y Descripción de Archivos Relevantes-
+-Descripción del proceso y archivos del proyecto-
 
-. Preprocesamiento de Datos (ETL): Incluye la extraccion y descompresion de los archivos base desde el drive del proyecto, tratamiento preliminar de la base de datos, extraccion de datos anidados, tratamiento de datos duplicados y nulos, estandarizacion de tipos de datos en columnas.
+. Preprocesamiento de Datos (ETL): Incluye la carga y desanidación de los datos crudos, tratamiento preliminar de la base de datos: depuración de columnas, formateo, creacion de columna "return", imputacion de valores nulos de revenue y budget.
 
-ARCHIVOS: . Preprocesamiento steam_games.ipynb . Preprocesamiento user_reviews.ipynb . Preprocesamiento users_items.ipynb . steam_games.parquet . user_reviews.parquet . users_items.parquet
+ARCHIVOS: . MS_Transformaciones.ipynb (al final de esta notebook se exportan los archivos desanidados de movie y credits, sin embargo estos no se encuentran en el repositorio por cuestión de limitación de espacio)
 
-. Analisis exploratorio de Datos: investigacion de relaciones entre las variables de los datasets, verificacion de outliers o anomalías.Generacion de un nuevo diccionario de datos que nos permita entender mejor la utilidad y relación de todos los datos.
+. EDA y desarrollo de sistema de recomendación: incluye la verificación de tipos de datos, porcentaje de nulos, eliminación de datos duplicados, graficas estadisticos para distribucion de valores y analisis de relaciones entre las variables versus el dato de popularidad de la pelicula (dato principal en el que se basa el sistema de recomendación). En este paso la base se recortó de manera significativa atendiendo los requerimientos de las funciones a desarrollar y la limitacion de espacio, con los criterios de decisión explicados. Tambien en este paso se encuentran las pruebas realizadas para el sistema de recomendación, las funciones y la creación de los datasets resumidos que seran consumidas por la API.
 
-ARCHIVOS: . EDA steam_games.ipynb . EDA user_reviews.ipynb . EDA users_items.ipynb . Diccionario de Datos.txt
+ARCHIVOS: . EDA y Sistema de recomendacion.ipynb . MS_funciones.ipynb . cant_pelis_x_dia.parquet . cant_pelis_x_mes.parquet . peliculas_datos.parquet . actores.parquet . directores.parquet . matriz_normalizada_popularity.parquet
 
 . Modelado de Datos: creacion de la columna "sentiment_analysis" en el dataset "user_reviews" a través de NLP (librería TextBlob), manejo de datos faltantes. Creación de datasets auxiliares.
 
