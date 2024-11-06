@@ -211,26 +211,35 @@ df_popularidad = pd.read_parquet('Datasets/matriz_normalizada_popularity.parquet
 
 matriz_similaridad_popularidad = cosine_similarity(df_popularidad)
 
-def define_recomendacion(titulo):
-    # Buscamos el índice de la película en el dataset
-    movie_index = df_peliculas_datos.index[df_peliculas_datos['title'] == titulo].tolist()[0]
+def define_recomendaciones(titulo):
     
-    # Obtenemos los puntajes de similitud para esa película específica
-    similarity_scores = list(enumerate(matriz_similaridad_popularidad[movie_index]))
+    # Verificar si el título existe en el dataset
+    if titulo not in df_peliculas_datos['title'].values:
+        return f"La película '{titulo}' no se encuentra en el dataset."
+
+    # Encontrar el índice de la película en el dataset
+    movie_index = df_peliculas_datos[df_peliculas_datos['title'] == titulo].index[0]
     
-    # Ordenamos las películas por similitud en orden descendente
+    # Obtener los puntajes de similitud para esa película específica
+    similarity_scores = list(enumerate(df_peliculas_datos[movie_index]))
+    
+    # Ordenar las películas por similitud en orden descendente
     similarity_scores = sorted(similarity_scores, key=lambda x: x[1], reverse=True)
-    
-    # Seleccionamos los índices de las películas más similares (excluyendo la misma película)
+
+    # Seleccionar los índices de las películas más similares (excluyendo la misma película)
     top_movies_indices = [i[0] for i in similarity_scores[1:6]]
     
-    # Obtenemos los títulos de las películas recomendadas
-    recommended_titles = df_peliculas_datos.iloc[top_movies_indices]['title'].tolist()
+    # Filtrar y ordenar las películas similares por popularidad
+    top_movies = df_peliculas_datos.iloc[top_movies_indices]
+    top_movies = top_movies.sort_values(by='popularity', ascending=False)
+    
+    # Obtener los títulos de las películas recomendadas
+    recommended_titles = top_movies['title'].tolist()
     
     return recommended_titles
 
 # Definimos el endpoint
 @app.get("/recomendacion")
 def recomendacion(titulo: str):
-    resultado = define_recomendacion(titulo)
+    resultado = define_recomendaciones(titulo)
     return {"resultado": resultado}
