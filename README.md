@@ -1,8 +1,8 @@
-HENRY - PROYECTO INDIVIDUAL Nº1: Steam Games
+HENRY - PROYECTO INDIVIDUAL: Plataforma de Streaming de Películas
 
--Intro- Este proyecto fue realizado con el propósito de demostrar las capacidades adquiridas en cuanto a manejo de datasets, python, machine learning entre otros.
+-Intro- Este proyecto fue realizado con el propósito de demostrar las capacidades adquiridas en cuanto a manejo de datasets, python, ETL y machine learning entre otros.
 
--Descripcion básica del Proyecto- A partir de 3 datasets crudos de la Plataforma "Steam Games", se me fue dada la tarea de crear y disponibilizar en la web un conjunto de 6 consultas relevantes acerca de los datos en dichos datasets. 5 de las 6 consultas requieren manejo básico de bases de datos y 1 requiere entrenar un modelo de machine learning para armar un sistema de recomendación de juegos.
+-Descripcion básica del Proyecto- A partir de 2 datasets crudos de una plataforma de streaming de películas, movies y credits, se ha implementado una API en la web para consultas   5 de las 6 consultas requieren manejo básico de bases de datos y 1 requiere entrenar un modelo de machine learning para armar un sistema de recomendación de juegos.
 
 -Pasos Dados para la concrecion del Proyecto y Descripción de Archivos Relevantes-
 
