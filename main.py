@@ -221,7 +221,7 @@ def define_recomendaciones(titulo):
     movie_index = df_peliculas_datos[df_peliculas_datos['title'] == titulo].index[0]
     
     # Obtener los puntajes de similitud para esa película específica
-    similarity_scores = list(enumerate(df_peliculas_datos[movie_index]))
+    similarity_scores = list(enumerate(matriz_similaridad_popularidad[movie_index]))
     
     # Ordenar las películas por similitud en orden descendente
     similarity_scores = sorted(similarity_scores, key=lambda x: x[1], reverse=True)
